@@ -1,0 +1,12 @@
+export default {
+  port: 3000,
+  db: {
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'kingofglory',
+    port: 3306,
+    charset: 'utf8',
+    connectionLimit: 5,
+  }
+};

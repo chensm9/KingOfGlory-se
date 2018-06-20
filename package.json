@@ -1,0 +1,26 @@
+{
+  "name": "kingofglory-se",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node check_config.js && export NODE_ENV='dev' && node index.js",
+    "prod": "echo 'Not implemented yet, maybe use pm2'",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "esm": "^3.0.34",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-express-router": "^0.3.4",
+    "koa-session": "^5.8.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  },
+  "esm": {
+    "mode": "auto"
+  }
+}
