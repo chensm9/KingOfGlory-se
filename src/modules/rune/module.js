@@ -17,7 +17,21 @@ var getRuneInfoByName = async (name) => {
   return rune;
 }
 
+var getRuneJson = async (runeJson) => {
+  var runes = [];
+  for(var i in runeJson) {
+    let mysqlOptions = {
+      sql : 'select * from RuneInfo where name = ?',
+      args : [runeJson[i]]
+    };
+    var res = await mysql.execQuery(mysqlOptions);
+    runes.push(res[0]);
+  }
+  return runes;
+}
+
 module.exports = {
   getAllRuneInfo : getAllRuneInfo,
-  getRuneInfoByName : getRuneInfoByName
+  getRuneInfoByName : getRuneInfoByName,
+  getRuneJson: getRuneJson
 };

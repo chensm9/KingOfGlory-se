@@ -1,6 +1,8 @@
 import Koa from 'koa';
 import setRoute from './router';
 const app = new Koa();
+const bodyparser = require('koa-bodyparser')
+app.use(bodyparser())
 app.use(async (ctx, next) => {
   const start = new Date()
   await next()

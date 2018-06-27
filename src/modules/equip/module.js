@@ -14,10 +14,20 @@ var getEquipInfoByName = async (name) => {
     args : [name]
   };
   var equip = await mysql.execQuery(mysqlOptions);
-  return equip;
+  return equip[0];
+}
+
+var getEquipInfoByCategory = async (category) => {
+  let mysqlOptions = {
+    sql : 'select * from EquipInfo where category = ?',
+    args : [category]
+  };
+  var same_equip = await mysql.execQuery(mysqlOptions);
+  return same_equip;
 }
 
 module.exports = {
   getAllEquipInfo : getAllEquipInfo,
-  getEquipInfoByName : getEquipInfoByName
+  getEquipInfoByName : getEquipInfoByName,
+  getEquipInfoByCategory : getEquipInfoByCategory,
 };

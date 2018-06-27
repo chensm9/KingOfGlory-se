@@ -5,6 +5,7 @@ import runeRtr from './modules/rune/router';
 import skinRtr from './modules/skin/router';
 import summonerRtr from './modules/summoner/router';
 import skillRtr from './modules/skill/router';
+import collocationRtr from './modules/collocation/router'
 
 export default function setRoute(app) {
   const apiRtr = new Router({ prefix: '/api' });
@@ -15,4 +16,5 @@ export default function setRoute(app) {
         .use('/skin', skinRtr.routes())
         .use('/summoner', summonerRtr.routes())
         .use('/skill', skillRtr.routes())
+        .use('/collocation', collocationRtr.routes())
 }
